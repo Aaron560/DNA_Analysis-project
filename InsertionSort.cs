@@ -1,15 +1,12 @@
-﻿using System;
-
-public class Class1
+﻿public class Class1
 {
-    int[] arr = new int[10]
+    private int[] arr = new int[10]
     {
         1, 5, 4, 11, 20, 8, 2, 98, 90, 16
     };
-    
+
     private void InsertionSort(int[] arr)
     {
-        
         int j, temp;
         for (int i = 1; i <= arr.Length - 1; i++)
         {
@@ -23,8 +20,4 @@ public class Class1
             arr[j + 1] = temp;
         }
     }
-    
-    
 }
-
-    

@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 
 public class DNA_Analyzer
 {
-    public static string Analyzer(FileInfo file) 
+    public static string Analyzer(FileInfo file)
     {
         //Variable setup.
         List<string> Protiens = new List<string>();
@@ -14,38 +13,34 @@ public class DNA_Analyzer
         int MaxCounter = 0;
         int MaxInt = 0;
         string Classification = "";
-        
-        foreach (char c in Text) 
+
+        foreach (char c in Text)
         {
             //Triplet setup for DNA.
             TempString += c;
             TempInt++;
-            if (TempInt == 3) 
+            if (TempInt == 3)
             {
                 Protiens.Add(TempString);
                 TempString = "";
                 TempInt = 0;
-
             }
-
         }
 
         foreach (string protien in Protiens)
         {
             //Search for repeating data.
-            if (protien == "CAG") 
+            if (protien == "CAG")
             {
                 MaxCounter++;
 
                 if (MaxCounter > MaxInt)
                 {
                     MaxInt = MaxCounter;
-
                 }
-                else 
+                else
                 {
                     MaxCounter = 0;
-                    
                 }
             }
         }
@@ -54,17 +49,14 @@ public class DNA_Analyzer
         {
             Classification = "Normal";
         }
-
-        else if (MaxInt <= 35) 
+        else if (MaxInt <= 35)
         {
             Classification = "Intermediate";
         }
-
         else if (MaxInt <= 39)
         {
             Classification = "Reduced Performance";
         }
-
         else if (MaxInt >= 40)
         {
             Classification = "Full Penetrance";

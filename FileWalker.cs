@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
 
 public class FileWalker
 {
@@ -23,7 +21,6 @@ public class FileWalker
             // can try to elevate your privileges and access the file again.
             Console.WriteLine(e.Message);
         }
-
         catch (System.IO.DirectoryNotFoundException e)
         {
             Console.WriteLine(e.Message);
@@ -42,7 +39,7 @@ public class FileWalker
                 csvLine += ",";
                 csvLine += DNA_Analyzer.Analyzer(fi);
                 csvLine += "\n";
-                if (DNA_Analyzer.Analyzer(fi) != "Normal") 
+                if (DNA_Analyzer.Analyzer(fi) != "Normal")
                 {
                     csv += csvLine;
                     Console.WriteLine(csvLine);
@@ -56,7 +53,6 @@ public class FileWalker
             {
                 // Resursive call for each subdirectory.
                 csv += WalkDirectoryTree(dirInfo, trueRoot);
-                 
             }
         }
         return csv;
