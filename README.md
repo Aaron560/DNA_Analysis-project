@@ -1,4 +1,4 @@
-# Finals
+# DNA_Analysis
 ReWrote my Python code into C# for DNA analysis 
 
 
