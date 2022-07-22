@@ -7,7 +7,7 @@ public class CSVImport
     public List<string[]> CSV()
     {
         //Imports CSV from user input.
-        Console.WriteLine("Enter teh path to your csv: ");
+        Console.WriteLine("Enter the path to your csv: ");
 
         string path = Console.ReadLine();
 
